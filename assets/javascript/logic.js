@@ -44,6 +44,12 @@ $("#add-train-btn").click(function(event){
       console.log(newObject.firstTrain);
       console.log(newObject.frequency);
 
+//**BEING EXTRA AND BASIC FOR THE LOLS**//
+      console.log('YOU ARE AWESOME'); 
+      console.log('SUCCESS!'); 
+      console.log('GOTTA GO FASTER!'); 
+      console.log('WHY DONT WE HAVE HIGH SPEED RAIL YET!'); 
+
       alert("Choo Choo! Train Successfully Added!");
 
 // Flush out the input wells 
