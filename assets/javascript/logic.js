@@ -1,4 +1,4 @@
-alert('yo!'); 
+alert('Gotta Go Fast!'); 
 
 // Initialize Firebase
   var config = {
@@ -26,7 +26,7 @@ $("#add-train-btn").click(function(event){
   var newFirstTrain = $("#first-train-input").val().trim();
   var newFrequency = $("#frequency-input").val().trim();
 
-// Creates local "temporary" object for holding train data
+// Create local "temporary" object for holding train data
   newObject = {
     train: newTrain,
     destination: newDestination,
@@ -44,7 +44,7 @@ $("#add-train-btn").click(function(event){
       console.log(newObject.firstTrain);
       console.log(newObject.frequency);
 
-      alert("Train successfully added!");
+      alert("Choo Choo! Train Successfully Added!");
 
 // Flush out the input wells 
       $("#train-name-input").val("");
@@ -62,23 +62,19 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
    console.log(childSnapshot.val());
 
-     // Store everything into a variable.
+      // Store everything into a variable.
       var newTrain = childSnapshot.val().train;
       var newDestination = childSnapshot.val().destination;
       var newFirstTrain = childSnapshot.val().firstTrain;
       var newFrequency = childSnapshot.val().frequency;
 
-       // Train Info
+        // Train Info
         console.log(newTrain);
         console.log(newDestination);
         console.log("FIRST TRAIN DEPARTED AT: " + newFirstTrain);
         console.log("THE TRAIN ARRIVES EVERY " + newFrequency + " MINUTES");
   
-
-        // Prettify the first train time 
-        // var firstTrainPretty = moment.unix(newFirstTrain).format("HH:mm");
-        // console.log("THIS SHOULD BE THE FIRST TRAIN TIME FORMAT IN hh:mm: " + firstTrainPretty)
- 
+        // Convert the first train time 
         var firstTrainConverted = moment(newFirstTrain, "hh:mm").subtract(1, "days");
         console.log(firstTrainConverted);;
       
