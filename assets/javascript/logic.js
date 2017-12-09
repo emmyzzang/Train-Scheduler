@@ -1,5 +1,3 @@
-alert('Gotta Go Fast!'); 
-
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyByvaeFk7g4DveE5NMZgqEOthAxACp1UR4",
@@ -105,4 +103,3 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
 
 });
-
